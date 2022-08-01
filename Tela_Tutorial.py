@@ -145,7 +145,7 @@ class TelaTutorial(PlanoDeFundo):
             pass
         
         
-        slide3 = Slides_Tutorial_Nivel3.Slide3('slidesTutorial/inner join.png', self.root)
+        slide3 = Slides_Tutorial_Nivel3.Slide1('slidesTutorial/innerjoin.png', self.root)
 
         slide3.orquestradora()
 

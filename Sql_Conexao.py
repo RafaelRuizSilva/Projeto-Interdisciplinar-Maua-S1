@@ -15,9 +15,9 @@ import pandas as pd
         '''
 
 class sqlComandos():
-    def __init__(self, hostname, banco_de_dados):
-        self.server = hostname
-        self.database = banco_de_dados
+    def __init__(self):
+        self.server = 'DESKTOP-G2A0PO4\SQLEXPRESS'
+        self.database = 'PROJETO_MAUA'
     
 
     def criando_conexao_sql(self):

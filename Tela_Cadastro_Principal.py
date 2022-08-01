@@ -41,7 +41,7 @@ class TelaCadastro:
         self.label_fundo = Label(self.menu_cadastro, image=self.fundo)
         self.label_fundo.pack()
 
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
 
     def centralizar_interface_menu_cadastro(self):
 
@@ -136,6 +136,7 @@ class TelaCadastro:
                                  bg='#298A97',
                                  borderwidth=False,
                                  height=45,
+                                  activebackground = '#298A97',
                                  command=self.inserir_codigo)
         self.btn_signup.pack()
         borda_btn.pack()
@@ -191,6 +192,7 @@ class TelaCadastro:
         '''
             Função que valida os dados de entrada do usuário
         '''
+
         email_valido = False
         lista_emails_aceitaveis = ['gmail.com','gmail.com.br','hotmail.com','hotmail.com.br', 'outlook.com', 'outlook.com.br','yahoo.com.br'
         'yahoo.com','uol.com.br','maua.br']
@@ -243,6 +245,7 @@ class TelaCadastro:
                                     mi = Messagebox.MessageboxErro('images/messagebox.png','ERRO', f'Formato de email inválido')
                                     mi.orquestradora()
                     
+
 
     def inserir_codigo(self):
 

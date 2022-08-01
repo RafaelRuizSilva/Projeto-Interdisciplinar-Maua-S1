@@ -19,7 +19,7 @@ class Criar(PlanoDeFundo):
 
 
         # CRIANDO CONEXÃO COM BANCO DE DADOS 
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
 
     def inserindo_input_pergunta(self):
         

@@ -19,7 +19,7 @@ class Quiz(PlanoDeFundo):
         self.nivel_num = nivel_num
         nivel = str(nivel) + ' '
         self.nivel = nivel
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
 
 
     def base_pergunta_nivel(self, nivel):
@@ -99,7 +99,7 @@ class Quiz(PlanoDeFundo):
                     mb.orquestradora()
                 else:
                     if self.ra.get() in list(self.df_jogador['RA_JOGADOR']) and self.nivel in list(self.df_jogador[self.df_jogador['RA_JOGADOR'] == self.ra.get()]['NIVEL']):
-                        mb = Messagebox.MessageboxErro('images/messagebox.png','ERRO','O RA digitado já realizaou esse Quiz')
+                        mb = Messagebox.MessageboxErro('images/messagebox.png','ERRO','O RA digitado já realizou esse Quiz')
                         mb.orquestradora()
                     else:
                         if len(self.ra.get()) != 10:
@@ -140,7 +140,7 @@ class Quiz(PlanoDeFundo):
         self.start['bg'] = '#4285f4'
 
 
-    def input_nome_completo(self):
+    def input_ra(self):
         self.ra = Entry(bg = 'white',
                           borderwidth=0,
                           width=42,
@@ -164,7 +164,7 @@ class Quiz(PlanoDeFundo):
 
         Quiz.base_pergunta_nivel(self, self.nivel)
 
-        Quiz.input_nome_completo(self)
+        Quiz.input_ra(self)
 
         Quiz.inserindo_botao_começar(self)
 

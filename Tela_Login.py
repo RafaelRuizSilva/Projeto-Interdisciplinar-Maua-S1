@@ -34,7 +34,7 @@ class Login:
         self.label_fundo = Label(self.menu_login, image=self.fundo)
         self.label_fundo.pack()
 
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
 
 
     def centralizando_menu_login(self):
@@ -143,6 +143,7 @@ class Login:
                                  borderwidth=False,
                                  height=45,
                                  width=105,
+                                 activebackground='#08B4B8',
                                  command=self.validando_login
                                  )
         self.btn_logar.pack()

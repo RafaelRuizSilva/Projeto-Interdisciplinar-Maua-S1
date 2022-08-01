@@ -15,7 +15,7 @@ class Resultado(PlanoDeFundo):
     def __init__(self, imagem_fundo, root):
         super().__init__(imagem_fundo, root)
 
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
 
     def botao_voltar(self):
         borda_btn = Frame(self.root,
@@ -28,7 +28,8 @@ class Resultado(PlanoDeFundo):
                              borderwidth = 0,
                              fg = 'black',
                              bg = '#50f0ff',
-                             command = self.voltar_menu
+                             command = self.voltar_menu,
+                             activebackground='#50f0ff'
                              )
         self.voltar.pack()
         borda_btn.pack()

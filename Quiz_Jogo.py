@@ -27,7 +27,7 @@ class QuizJogo(PlanoDeFundo):
         
         nivel = str(nivel) + ' '
         self.nivel = nivel
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
         self.ra = ra
         self.update_time = ''
         self.running = False
@@ -104,7 +104,7 @@ class QuizJogo(PlanoDeFundo):
     def resposta_usuario(self):
         
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -121,7 +121,7 @@ class QuizJogo(PlanoDeFundo):
 
     def abrir_3(self):
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -157,7 +157,7 @@ class QuizJogo(PlanoDeFundo):
     def abrir_5(self):
 
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -175,7 +175,7 @@ class QuizJogo(PlanoDeFundo):
     def abrir_6(self):
         
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -193,7 +193,7 @@ class QuizJogo(PlanoDeFundo):
     def abrir_7(self):
         
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -211,7 +211,7 @@ class QuizJogo(PlanoDeFundo):
     def abrir_8(self):
         
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -229,7 +229,7 @@ class QuizJogo(PlanoDeFundo):
     def abrir_9(self):
         
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -247,7 +247,7 @@ class QuizJogo(PlanoDeFundo):
     def abrir_10(self):
         
         if self.selecionado.get() == 'vazio':
-            mi = Messagebox.MessageboxInfo('images/messagebox.png','AVISO', 'Selecione uma alternativa')
+            mi = Messagebox.MessageboxInfo('images/messageboxinfo.png','AVISO', 'Selecione uma alternativa')
             mi.orquestradora()
         else:
             self.lista.append(self.selecionado.get())
@@ -306,9 +306,9 @@ class QuizJogo(PlanoDeFundo):
 
         query_update = '''UPDATE TBL_JOGADOR 
                           SET PONTUACAO = ?, TEMPO = ?
-                          WHERE RA_JOGADOR = ?
+                          WHERE RA_JOGADOR = ?  AND NIVEL = ?
         '''
-        self.sql.cursor.execute(query_update, self.acerto, tempo, self.ra)
+        self.sql.cursor.execute(query_update, self.acerto, tempo, self.ra, self.nivel)
         self.sql.conexao.commit()
         result.orquestradora()
 

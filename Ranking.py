@@ -19,11 +19,12 @@ class Ranking(PlanoDeFundo):
 
 
         # CRIANDO CONEXÃO COM BANCO DE DADOS 
-        self.sql = sqlComandos('DESKTOP-G2A0PO4\SQLEXPRESS', 'PROJETO_MAUA')
+        self.sql = sqlComandos()
 
 
     def base_jogador(self):
         self.df_jogador = pd.read_sql_query('SELECT * FROM TBL_JOGADOR', self.sql.conexao)
+
 
     def inserindo_tabela(self):
         '''
@@ -73,8 +74,7 @@ class Ranking(PlanoDeFundo):
         self.tabela.tag_configure('linha_impar', background='#92f5ec')
         # Alimentando a tabela com os dados da base do BD
         
-        self.df_jogador.sort_values(by=['PONTUACAO','TEMPO'], ascending=False, inplace=True)
-        self.df_jogador.drop(['ID_JOGADOR'], axis=1, inplace=True)
+        self.df_jogador.sort_values(by=['PONTUACAO'], ascending=False, inplace=True)
         
 
         lista_dados = list(zip(list(self.df_jogador['RA_JOGADOR']), list(self.df_jogador['PONTUACAO']), list(self.df_jogador['TEMPO']), list(self.df_jogador['NIVEL'])))
