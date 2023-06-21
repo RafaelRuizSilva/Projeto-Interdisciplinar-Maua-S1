@@ -255,8 +255,9 @@ class Ranking(PlanoDeFundo):
 
     def deletar_pergunta(self):
         try:
-            item_selecionado = self.tabela.selection()[0]
+            item_selecionado = self.tabela.focus()
             valores = self.tabela.item(item_selecionado, 'values')
+            print(valores)
             query_deletar = '''DELETE TBL_JOGADOR WHERE RA_JOGADOR = ?'''
             deseja_deletar = messagebox.askyesno('DELETAR',f'Deseja deletar o registro RA: {valores[0]}?')
             if deseja_deletar:

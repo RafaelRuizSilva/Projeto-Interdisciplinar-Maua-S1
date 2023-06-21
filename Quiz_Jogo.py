@@ -8,7 +8,6 @@ import datetime
 import pyodbc
 from tkinter import messagebox
 import pandas as pd
-from setuptools import Command
 from placeholder import add_placeholder_to
 from Sql_Conexao import sqlComandos
 from Planodefundo import PlanoDeFundo

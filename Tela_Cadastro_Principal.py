@@ -279,7 +279,7 @@ class TelaCadastro:
 
     def base_sql(self):
         try:
-            self.df = pd.read_sql("SELECT * FROM TBL_CADASTRO;", self.sql.conexao)
+            self.df = pd.read_sql("SELECT * FROM PROJETO_MAUA.dbo.TBL_CADASTRO;", self.sql.conexao)
         except:
             try:
                 self.df = pd.read_sql("SELECT * FROM PROJETO_MAUA.TBL_CADASTRO;", self.sql.conexao)

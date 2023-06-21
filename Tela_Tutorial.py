@@ -5,6 +5,7 @@ from Planodefundo import PlanoDeFundo
 import Voltar_Tela_Principal
 import Slides_Tutorial_Nivel2
 import Slides_Tutorial_Nivel1
+import Slides_Tutorial_Nivel3
 
 class TelaTutorial(PlanoDeFundo):
 
@@ -50,6 +51,7 @@ class TelaTutorial(PlanoDeFundo):
                                  height=45,
                                  width=105,
                                  activebackground='#5B30D4',
+                                 command=self.abrir_slide_3
                                  )
         self.btn_mod3.pack()
         self.btn_mod3.place(width=300, height=55, x=375, y=460)
@@ -117,6 +119,36 @@ class TelaTutorial(PlanoDeFundo):
 
     def button_leave3(self, e):
         self.btn_mod3['fg'] = 'black'
+
+
+    def abrir_slide_3(self):
+
+        try:
+            self.btn_mod1.destroy()
+        except:
+            pass
+        try:
+            self.btn_mod2.destroy()
+        except:
+            pass
+        try:
+            self.btn_mod3.destroy()
+        except:
+            pass
+        try:
+            self.voltar.destroy()
+        except:
+            pass
+        try:
+            self.label_fundo.destroy()
+        except:
+            pass
+        
+        
+        slide3 = Slides_Tutorial_Nivel3.Slide3('slidesTutorial/database.png', self.root)
+
+        slide3.orquestradora()
+
 
 
     def abrir_slide_2(self):

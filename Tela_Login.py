@@ -35,7 +35,7 @@ class Login:
         self.label_fundo.pack()
 
         self.sql = sqlComandos('DESKTOP-C10NOM4\SQLEXPRESS', 'PROJETO_MAUA')
-
+        
 
     def centralizando_menu_login(self):
 
@@ -189,15 +189,9 @@ class Login:
 
     def base_sql(self):
         try:
-            self.df = pd.read_sql("SELECT * FROM TBL_CADASTRO;", self.sql.conexao)
-        except:
-            try:
-                self.df = pd.read_sql("SELECT * FROM PROJETO_MAUA.TBL_CADASTRO;", self.sql.conexao)
-            except:
-                try:
-                    self.df = pd.read_sql("SELECT * FROM PROJETO_MAUA.dbo.TBL_CADASTRO;", self.sql.conexao)
-                except:
-                    print('Erro ao ler base TBL_CADASTRO do SQL')
+            self.df = pd.read_sql("SELECT * FROM PROJETO_MAUA.dbo.TBL_CADASTRO;", self.sql.conexao)
+        except Exception as ex:
+            print('Erro ao ler base TBL_CADASTRO do SQL', ex)
         
 
     def abrir_principal(self):
@@ -245,6 +239,10 @@ class Login:
 
 
     def orquestradora(self):
+        
+        self.sql.criando_conexao_sql()
+
+        Login.base_sql(self)
 
         Login.centralizando_menu_login(self)
 
@@ -257,10 +255,6 @@ class Login:
         Login.inserindo_botao_criar_conta(self)
 
         Login.inserindo_checkbutton_senha(self)
-
-        self.sql.criando_conexao_sql()
-
-        Login.base_sql(self)
 
         Login.executar(self)
         

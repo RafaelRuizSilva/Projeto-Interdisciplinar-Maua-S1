@@ -54,7 +54,7 @@ class Slide1(PlanoDeFundo):
         except:
             pass
 
-        slide2 = Slide2('slidesTutorial/', self.root)
+        slide2 = Slide2('slidesTutorial/leftjoin.png', self.root)
 
         slide2.orquestradora()
 
@@ -115,7 +115,7 @@ class Slide2(PlanoDeFundo):
         except:
             pass
 
-        slide3 = Slide3('slidesTutorial/', self.root)
+        slide3 = Slide3('slidesTutorial/rightjoin.png', self.root)
 
         slide3.orquestradora()
 
@@ -125,6 +125,7 @@ class Slide2(PlanoDeFundo):
         Slide2.botao_proximo(self)
 
         Slide2.botao_hover(self)
+
 
 class Slide3(PlanoDeFundo):
 
@@ -175,7 +176,7 @@ class Slide3(PlanoDeFundo):
         except:
             pass
 
-        slide4 = Slide4('slidesTutorial/', self.root)
+        slide4 = Slide4('slidesTutorial/outersjoin.png', self.root)
 
         slide4.orquestradora()
 
@@ -235,7 +236,7 @@ class Slide4(PlanoDeFundo):
         except:
             pass
 
-        slide5 = Slide5('slidesTutorial/', self.root)
+        slide5 = Slide5('slidesTutorial/Slide1a.png', self.root)
 
         slide5.orquestradora()
 
@@ -295,7 +296,7 @@ class Slide5(PlanoDeFundo):
         except:
             pass
 
-        slide6 = Slide6('slidesTutorial/', self.root)
+        slide6 = Slide6('slidesTutorial/Slide2a.png', self.root)
 
         slide6.orquestradora()
 
@@ -307,6 +308,126 @@ class Slide5(PlanoDeFundo):
 
 
 class Slide6(PlanoDeFundo):
+
+    def botao_proximo(self):
+
+        borda_btn = Frame(self.root,
+                          highlightthickness=1,
+                          highlightbackground="#ffffff",)
+
+
+        self.btn_proximo = Button(borda_btn,
+                                 text='Próximo',
+                                 font='Copper 16 bold',
+                                 fg='white',
+                                 borderwidth=False,
+                                 bg='#28948A',
+                                 height=45,
+                                 width=105,
+                                 activebackground='#28948A',
+                                 command=self.abrir_slide7
+                                 )
+        self.btn_proximo.pack()
+        borda_btn.pack()
+        borda_btn.place(width=150, height=44, x=812, y = 500) 
+
+
+    def botao_hover(self):
+        self.btn_proximo.bind('<Enter>', self.button_hover)
+        self.btn_proximo.bind('<Leave>', self.button_leave)    
+
+
+    def button_hover(self, e):
+        self.btn_proximo['fg'] = 'black'
+        self.btn_proximo['bg'] = '#148378'
+
+    def button_leave(self, e):
+        self.btn_proximo['fg'] = 'white'
+        self.btn_proximo['bg'] = '#28948A'
+
+    
+    def abrir_slide7(self):
+        try:
+            self.btn_proximo.destroy()
+        except:
+            pass
+        try:
+            self.label_fundo.destroy()
+        except:
+            pass
+
+        slide7 = Slide7('slidesTutorial/Slide3a.png', self.root)
+
+        slide7.orquestradora()
+
+    def orquestradora(self):
+
+        Slide6.botao_proximo(self)
+
+        Slide6.botao_hover(self)
+
+
+class Slide7(PlanoDeFundo):
+
+    def botao_proximo(self):
+
+        borda_btn = Frame(self.root,
+                          highlightthickness=1,
+                          highlightbackground="#ffffff",)
+
+
+        self.btn_proximo = Button(borda_btn,
+                                 text='Próximo',
+                                 font='Copper 16 bold',
+                                 fg='white',
+                                 borderwidth=False,
+                                 bg='#28948A',
+                                 height=45,
+                                 width=105,
+                                 activebackground='#28948A',
+                                 command=self.abrir_slide8
+                                 )
+        self.btn_proximo.pack()
+        borda_btn.pack()
+        borda_btn.place(width=150, height=44, x=812, y = 500) 
+
+
+    def botao_hover(self):
+        self.btn_proximo.bind('<Enter>', self.button_hover)
+        self.btn_proximo.bind('<Leave>', self.button_leave)    
+
+
+    def button_hover(self, e):
+        self.btn_proximo['fg'] = 'black'
+        self.btn_proximo['bg'] = '#148378'
+
+    def button_leave(self, e):
+        self.btn_proximo['fg'] = 'white'
+        self.btn_proximo['bg'] = '#28948A'
+
+    
+    def abrir_slide8(self):
+        try:
+            self.btn_proximo.destroy()
+        except:
+            pass
+        try:
+            self.label_fundo.destroy()
+        except:
+            pass
+
+        slide8 = Slide8('slidesTutorial/Slide4a.png', self.root)
+
+        slide8.orquestradora()
+
+    def orquestradora(self):
+
+        Slide7.botao_proximo(self)
+
+        Slide7.botao_hover(self)
+
+
+class Slide8(PlanoDeFundo):
 
     def botao_voltar_menu(self):
 
@@ -362,6 +483,6 @@ class Slide6(PlanoDeFundo):
 
     def orquestradora(self):
 
-        Slide6.botao_voltar_menu(self)
+        Slide8.botao_voltar_menu(self)
 
-        Slide6.botao_hover(self)
+        Slide8.botao_hover(self)
