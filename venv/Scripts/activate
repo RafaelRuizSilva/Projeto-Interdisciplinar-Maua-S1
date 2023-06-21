@@ -44,7 +44,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='C:\Users\rafar\Documents\PROJETOS\PROJETOS_GITHUB\PROJETO_MAUA_OFICIAL\venv'
+VIRTUAL_ENV='C:\Users\rafar\Documents\PROJETOS\PROJETOS_GITHUB\projeto_maua_1s\Projeto-Interdisciplinar-Maua-S1\venv'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi

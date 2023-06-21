@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=C:\Users\rafar\Documents\PROJETOS\PROJETOS_GITHUB\PROJETO_MAUA_OFICIAL\venv"
+@set "VIRTUAL_ENV=C:\Users\rafar\Documents\PROJETOS\PROJETOS_GITHUB\projeto_maua_1s\Projeto-Interdisciplinar-Maua-S1\venv"
 
 @if defined _OLD_VIRTUAL_PROMPT (
     @set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
